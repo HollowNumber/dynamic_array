@@ -25,7 +25,7 @@ List createList(int initial_capacity) {
 void addToList(List *list, int data) {
   int *tmp_data;
 
-  list->capacity = list->capacity + 1;
+  list->capacity++;
 
   // Realloc current size + size of new data
 
