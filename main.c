@@ -15,7 +15,9 @@ int main() {
   printf("\n\n\n");
 
   printList(list);
-
+  
+  free(list->data);
   free(list);
+  
   return 0;
 }
