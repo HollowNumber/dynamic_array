@@ -43,6 +43,7 @@ void addToList(List *list, int data) {
   list->data = tmp_data;
 }
 
+// Swapback
 void removeFromList(List *list, int index) {
   int *tmp_data;
   int last_value = list->data[list->capacity - 1];
