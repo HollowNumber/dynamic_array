@@ -3,19 +3,19 @@
 #include <stdlib.h>
 
 int main() {
-  List *list = createList(1);
+  List list = createList(0);
 
   for (int i = 0; i < 10; i++) {
-    addToList(list, i);
+    addToList(&list, i);
   }
 
-  printList(list);
+  printList(&list);
 
-  removeFromList(list, 0);
-  printf("\n\n\n");
+  removeFromList(&list, 0);
+  printf("\n\n");
 
-  printList(list);
+  printList(&list);
 
-  free(list);
+  free(list.data);
   return 0;
 }

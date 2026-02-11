@@ -3,23 +3,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-List *createList(int initial_capacity) {
+List createList(int initial_capacity) {
 
-  List *list = malloc(sizeof(List));
+  List list;
   int *data;
-
-  if (list == NULL) {
-    return NULL;
-  }
 
   int size = sizeof(*data) * initial_capacity;
 
-  list->data = malloc(size);
+  data = malloc(size);
 
-  if (list->data == NULL)
-    return NULL;
+  if (data == NULL)
+    return list;
 
-  list->capacity = initial_capacity;
+  list.data = data;
+
+  list.capacity = initial_capacity;
 
   return list;
 }

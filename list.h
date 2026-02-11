@@ -5,7 +5,7 @@ typedef struct {
   int capacity;
 } List;
 
-List *createList(int initial_capacity);
+List createList(int initial_capacity);
 
 void addToList(List *list, int data);
 
