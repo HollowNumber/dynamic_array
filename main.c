@@ -6,16 +6,31 @@ int main() {
   List list = createList(0);
 
   for (int i = 0; i < 10; i++) {
-    addToList(&list, i);
+    put(&list, i);
   }
 
   printList(&list);
 
-  removeFromList(&list, 0);
-  printf("\n\n");
+  printf("swapback:\n");
+  swapback(&list, 2);
+
+  printList(&list);
+  printf("pop:\n");
+  pop(&list);
+
+  printList(&list);
+
+  printf("addToList:\n");
+  addToList(&list, 1, 200);
+
+  printList(&list);
+
+  printf("removeFromList:\n");
+  removeFromList(&list, 4);
 
   printList(&list);
 
   free(list.data);
+
   return 0;
 }
