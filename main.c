@@ -9,6 +9,7 @@ int main() {
     put(&list, i);
   }
 
+  printf("Original array:\n");
   printList(&list);
 
   printf("swapback:\n");

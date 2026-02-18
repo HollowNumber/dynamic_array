@@ -8,9 +8,7 @@ List createList(int initial_capacity) {
   List list;
   int *data;
 
-  int size = sizeof(*data) * initial_capacity;
-
-  data = malloc(size);
+  data = calloc(initial_capacity, sizeof(int));
 
   if (data == NULL)
     return list;
@@ -90,6 +88,7 @@ void addToList(List *list, int index, int data) {
     return;
 
   // naive - loop and move indices from input index to new capacity
+  // O(n)
 
   for (int i = list->capacity - 1; i < index; i--) {
     tmp_data[i] = tmp_data[i - 2];
@@ -128,7 +127,7 @@ void printList(List *list) {
   int length = list->capacity;
 
   for (int i = 0; i < length; i++) {
-    printf("Index: %d - value: %d\n", i, list->data[i]);
+    printf("Index: %d | value: %d\n", i, list->data[i]);
   }
   printf("\n");
 }
